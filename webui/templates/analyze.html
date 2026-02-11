@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="panel">
+  <h2>Analyze IQ File</h2>
+  <label>IQ file path</label><input id="iq" placeholder="/path/to/capture.iq"/>
+  <label>Sample rate (Hz)</label><input id="sample_rate" value="{{ sample_rate }}"/>
+  <label>Frequency (MHz)</label><input id="freq" value="{{ freq_mhz }}"/>
+  <button onclick="analyzeFile()">Analyze</button>
+</section>
+<section class="panel">
+  <h3>Result</h3>
+  <pre id="output">Waiting for request...</pre>
+</section>
+<script src="{{ url_for('static', filename='analyze.js') }}"></script>
+{% endblock %}

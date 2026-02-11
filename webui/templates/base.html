@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{{ title or 'Universal RF' }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='tactical.css') }}"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">TACTICAL RF FRAMEWORK</div>
+    <nav>
+      <a href="{{ url_for('home') }}">Dashboard</a>
+      <a href="{{ url_for('analyze_page') }}">Analyze</a>
+      <a href="{{ url_for('capture_page') }}">Capture</a>
+          <a href="{{ url_for('operations_page') }}">Operations</a>
+    </nav>
+  </header>
+  <main class="container">{% block content %}{% endblock %}</main>
+</body>
+</html>
