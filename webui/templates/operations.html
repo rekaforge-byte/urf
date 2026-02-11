@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="panel">
+  <h2>Operations (Replay / Modify+Clone)</h2>
+  <label>IQ file path</label><input id="iq" placeholder="/path/to/capture.iq"/>
+  <label>Sample rate (Hz)</label><input id="sample_rate" value="{{ sample_rate }}"/>
+  <label>Frequency (MHz)</label><input id="freq" value="{{ freq_mhz }}"/>
+</section>
+
+<section class="panel">
+  <h3>Replay</h3>
+  <label>Repeat</label><input id="repeat" value="1"/>
+  <label>Delay (ms)</label><input id="delay_ms" value="100"/>
+  <button onclick="replayIq()">Replay IQ</button>
+</section>
+
+<section class="panel">
+  <h3>Modify + Clone</h3>
+  <label>Field</label><input id="field" value="command"/>
+  <label>New value (decimal or binary)</label><input id="value" value="1"/>
+  <label>Output IQ</label><input id="output_iq" value="modified.iq"/>
+  <button onclick="modifyClone()">Modify + Clone</button>
+</section>
+
+<section class="panel">
+  <h3>Result</h3>
+  <pre id="output">Waiting for request...</pre>
+</section>
+<script src="{{ url_for('static', filename='operations.js') }}"></script>
+{% endblock %}

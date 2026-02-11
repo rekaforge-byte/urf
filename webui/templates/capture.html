@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="panel">
+  <h2>Capture + Analyze</h2>
+  <label>Output IQ file</label><input id="out_file" value="capture.iq"/>
+  <label>Duration (seconds)</label><input id="duration" value="2.0"/>
+  <label>Sample rate (Hz)</label><input id="sample_rate" value="{{ sample_rate }}"/>
+  <label>Frequency (MHz)</label><input id="freq" value="{{ freq_mhz }}"/>
+  <button onclick="captureAndAnalyze()">Capture + Analyze</button>
+</section>
+<section class="panel">
+  <h3>Result</h3>
+  <pre id="output">Waiting for request...</pre>
+</section>
+<script src="{{ url_for('static', filename='capture.js') }}"></script>
+{% endblock %}
