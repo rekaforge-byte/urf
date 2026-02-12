@@ -1,7 +1,5 @@
 # Universal RF Reverse Engineering Framework (CLI + WebUI)
 
-This project keeps the original purpose: **RF reverse-engineering and signal analysis** for research/education.
-
 ## Enhancements (without removing original workflows)
 
 - CLI and WebUI workflows.
